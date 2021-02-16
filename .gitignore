@@ -1,0 +1,4 @@
+hostinfo.egg-info/
+hostinfo.egg-info/*
+
+__pycache__
