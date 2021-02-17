@@ -9,6 +9,11 @@ A command line tool that looks up host information
 use `install.sh` to install hostinfo as a dependency.
 If it does not work, try `pip install -e .`
 
+# How to run
+
+After installing the project as a dependency, open cmd
+in the root directory and run `hostfile -<arg>`
+
 ## Authors
 
 @tadomikikuto-bit @simi1079

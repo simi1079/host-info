@@ -1,18 +1,16 @@
 import sys
-from .classmodule import MyClass
-from .funcmodule import my_function
+from .lib import usage
+
 
 def main():
-    print('in main')
     args = sys.argv[1:]
-    print('count of args :: {}'.format(len(args)))
-    for arg in args:
-        print('passed argument :: {}'.format(arg))
 
-    my_function('hello world')
+    if args[0] == '-i':
+        return
 
-    my_object = MyClass('Thomas')
-    my_object.say_name()
+    if args[0] == '-h' or args[0] == 'help':
+        usage()
+
 
 if __name__ == '__main__':
     main()
