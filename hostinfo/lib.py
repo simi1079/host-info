@@ -5,7 +5,7 @@ def usage():
     return: none
     """
 
-    howTouse = """
+    how_to_use = """
 Usage:
     hostfile [-args]
 
@@ -15,10 +15,10 @@ arguments:
     # -w <IP> <Host>: write the supplied IP address and Hostname into the hostfile.txt
 
 interactive:
-    # -i: to interact with the program
+    # -i: to run the program in the interactive mode
 """
 
-    print(howTouse)
+    print(how_to_use)
 
 
 def show_menu():
