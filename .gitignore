@@ -2,3 +2,6 @@ hostinfo.egg-info/
 hostinfo.egg-info/*
 
 __pycache__
+
+venv
+venv/*
