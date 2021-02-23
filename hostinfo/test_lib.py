@@ -34,3 +34,12 @@ class TestHostFiles:
 
     def update_host(self):
         pass
+
+
+def app(capsys):
+    # pylint: disable=W0612,W0613
+    blueprint.Blueprint.run()
+    captured = capsys.readouterr()
+
+    assert "Hello World..." in captured.out
+
