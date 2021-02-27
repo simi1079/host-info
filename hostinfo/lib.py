@@ -78,7 +78,7 @@ def is_ip_octet(octet: int):
 
 def is_ip(ip_addr: str):
     """is_ip(ip_addr: str)
-    
+
     Purpose: validate IP address
     Parameters: IP address
     return: True/False
@@ -105,7 +105,7 @@ def search_hosts(file, query_str: str = ""):
     Parameters: optional search string
     Note: We will set up the empty string as the default value for the function
     parameter - the search string - in the function definition header line. 
-        Syntax: def func_name(parameter="")
+        Syntax: def func_name(file, query_str: str = ""="")
     """
     with open(file, mode="r") as reader:
         query_str_exists = False
@@ -125,7 +125,7 @@ def search_hosts(file, query_str: str = ""):
 
 def update_host(file: str, ip_addr: str, hostname: str):
     """update_host(file: str, ip_addr: str, hostname: str)
-    
+
     Purpose: write host information to hosts file
     Parameters: IP address, hostname
     Body: 

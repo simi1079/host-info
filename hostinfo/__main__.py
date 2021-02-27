@@ -1,5 +1,5 @@
 import sys
-from .lib import usage, search_hosts
+from .lib import update_host, usage, search_hosts
 
 INPUTFILE = "./hostsfile.txt"
 
@@ -21,9 +21,11 @@ def main():
             query_str = args[1]
             print(f"List of hosts for query string '{query_str}': ")
             search_hosts(INPUTFILE, query_str)
+            return
     except Exception:
         print(f"List of hosts: ")
         search_hosts(INPUTFILE)
+        return
 
 
 if __name__ == '__main__':
