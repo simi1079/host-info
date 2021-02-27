@@ -1,3 +1,5 @@
+from .exceptions import InvalidIP, InvalidHostname
+
 
 def usage():
     """
@@ -123,7 +125,7 @@ def search_hosts(file, query_str: str = ""):
             print(reader.read())
 
 
-def update_host(file: str, ip_addr: str, hostname: str):
+def update_host(file_path: str, ip_addr: str, hostname: str):
     """update_host(file: str, ip_addr: str, hostname: str)
 
     Purpose: write host information to hosts file
@@ -133,10 +135,10 @@ def update_host(file: str, ip_addr: str, hostname: str):
         Update hosts file 
     """
     if not is_ip(ip_addr):
-        return False
+        raise InvalidIP(f"'{ip_addr}': is not a valid IP address")
     elif not is_dns_name(hostname):
-        return False
+        raise InvalidHostname(f"'{hostname}' is not a valid hostname")
 
-    with open(file, mode="a") as writer:
-        new_line = ip_addr + hostname
+    with open(file_path, mode="a") as writer:
+        new_line = ip_addr + " " + hostname
         writer.write(new_line)

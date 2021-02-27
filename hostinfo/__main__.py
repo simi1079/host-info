@@ -1,5 +1,6 @@
 import sys
 from .lib import update_host, usage, search_hosts
+from .exceptions import InvalidIP, InvalidHostname
 
 INPUTFILE = "./hostsfile.txt"
 
@@ -25,6 +26,23 @@ def main():
     except Exception:
         print(f"List of hosts: ")
         search_hosts(INPUTFILE)
+        return
+
+    try:
+        if args[0] == "-w":
+            ip_addr = args[1]
+            hostname = args[2]
+            update_host(INPUTFILE, ip_addr, hostname)
+            print("A new host record has been saved")
+            return
+    except IndexError:
+        print("Please provide the IP and the hostname '-w 172.1.2.5 example.com'")
+        return
+    except InvalidIP as err:
+        print(err)
+        return
+    except InvalidHostname as err:
+        print(err)
         return
 
 
